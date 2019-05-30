@@ -1,0 +1,1 @@
+ find . -name *confounds.tsv | sed 's/.tsv//' | xargs -n 1 -I % sh -c "cat %.tsv | sed 's/n\/a/0/g' > %-FIX.tsv"
