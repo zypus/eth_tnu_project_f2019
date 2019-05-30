@@ -3,7 +3,7 @@ Dissociating schizophrenia patients from controls (using stopsignal fMRI data OR
 
 ## Structure
 
-1. Original data is obtained via some shell scripts (see [Original Data](##Original-Data) for details and caveats)
+1. Original data is obtained via some shell scripts (see [Original Data](#Original-Data) for details and caveats)
 2. Timeseries extraction is performed via the python code in [preprocessing/extract_roi_timeseries.py](https://github.com/zypus/eth_tnu_project_f2019/tree/master/preprocessing/extract_roi_timeseries.py)
 (3. The selection of ROI were informed by some analysis in R, which depends on preliminary output from the python code. Hence I have run both scripts back and forth a bit.)
 4. DCMs were defined with [analysis/specify_models.m](https://github.com/zypus/eth_tnu_project_f2019/tree/master/analysis/specify_models.m)
