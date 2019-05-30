@@ -1,6 +1,18 @@
 # ETH TNU Translational Neuromodeling Course Project F2019
 Dissociating schizophrenia patients from controls (using stopsignal fMRI data OR simulated BOLD signals). Semester project for the Translational Neuromodeling ETH Course F2019
 
+## Prerequisities
+
+### Matlab
+
+- [SPM](http://www.fil.ion.ucl.ac.uk/spm/software/spm12/)
+- (optional) Parallel Processing Toolbox
+
+### Python
+
+- run with Python 3.7
+- required packes can be found in [requirements.txt](https://github.com/zypus/eth_tnu_project_f2019/tree/master/requirements.txt)
+
 ## Structure
 
 1. Original data is obtained via some shell scripts (see [Original Data](#Original-Data) for details and caveats)
@@ -29,3 +41,11 @@ cd data.nosync
 # replaces "n/a" values with "0" in order to satisfy nilearn
 ./fix_confounds.sh
 ```
+## Acknowledgement
+
+This data was obtained from the OpenfMRI database (https://openfmri.org/dataset/ds000030/). Its accession number is ds000030.
+
+Poldrack, R. A. et al. A phenome-wide examination of neural and cognitive function. Sci. Data 3:160110 doi: 10.1038/sdata.2016.110 (2016).(https://www.nature.com/articles/sdata2016110) 
+
+Gorgolewski KJ, Durnez J and Poldrack RA. Preprocessed Consortium for Neuropsychiatric Phenomics dataset [version 2; peer review: 2 approved]. F1000Research 2017, 6:1262
+(https://doi.org/10.12688/f1000research.11964.2)
