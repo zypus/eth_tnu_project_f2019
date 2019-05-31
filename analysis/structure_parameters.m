@@ -1,6 +1,11 @@
 function [P] = structure_parameters(pf, template)
-%FLATTEN_PARAMETERS Summary of this function goes here
-%   Detailed explanation goes here
+%STRUCTURE_PARAMETERS Converts vector of parameters into parameter
+%structure (inverse of FLATTEN_PARAMETERS)
+%   pf - Vector of double values
+%   template - Defines the sizes of the individual matrices in the
+%   structure, this is usually just a reference parameter structure, as the
+%   values inside don't matter just the dimensions are important
+
 
  A = size(template.A);
  B = size(template.B);

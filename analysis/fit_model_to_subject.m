@@ -1,6 +1,9 @@
 function fit = fit_model_to_subject(model, sub)
-%FIT_MODEL_TO_SUBJECT Summary of this function goes here
-%   Detailed explanation goes here
+%FIT_MODEL_TO_SUBJECT Given a model and a subject tries to fit the model
+%using bayesian inference
+% OUTPUT
+%  fit = sub
+% + fit.F - Negative Free Energy = log model evidence
 
     U.u = sub.u;
     U.dt = 0.1;
@@ -35,7 +38,7 @@ function fit = fit_model_to_subject(model, sub)
     %Y.X0 = sub.x0;
     %Y.Q = stdY;
 
-    [Ep, ~, ~, F] = spm_nlsi_GN(M,U,Y);
+    [Ep, ~, ~, F] = spm_nlsi_GN(M,U,Y); % NOTE: should not have discared Cp here, because else I could also habe done BMA
 
     sub.P = merge_parameters(P, mask, Ep);
     

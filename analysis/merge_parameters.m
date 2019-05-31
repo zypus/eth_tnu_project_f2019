@@ -1,6 +1,6 @@
 function [Pm] = merge_parameters(P, mask, new_P)
-%FLATTEN_PARAMETERS Summary of this function goes here
-%   Detailed explanation goes here
+%FLATTEN_PARAMETERS Replaces values in P with values in vector new_P
+%according to a masking structure
 
  params = flatten_parameters(P);
  flat_mask = flatten_parameters(mask);

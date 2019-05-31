@@ -1,5 +1,5 @@
 function ljd = log_joint_distribution(data, U, P, P_hrf, x0, h0, sigma, param_mask, param_sigma)
-
+    % Computes the log joint distribution log Pr(P|data)Pr(P) for the given model and data
     params = flatten_parameters(P);
     param_mask = flatten_parameters(param_mask);
     

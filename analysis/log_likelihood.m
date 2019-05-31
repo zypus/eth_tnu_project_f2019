@@ -1,4 +1,5 @@
 function lp = log_likelihood(data, U, P, P_hrf, x0, h0, sigma)
+    % computes the log likelihood Pr(P|data)
     [y, ~, ~] = euler_integrate_dcm(U, P, P_hrf, x0, h0);
     if isfield(U, "subsample")
         y = y(:,1:U.subsample:end);

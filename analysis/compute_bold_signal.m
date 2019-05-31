@@ -1,4 +1,5 @@
 function y = compute_bold_signal(h, P_hrf)
+    % Implements bold signal change equation 
     V0 = 0.04;
 
     v0 = 80.6;

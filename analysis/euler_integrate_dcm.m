@@ -1,4 +1,15 @@
 function [y, h, x] = euler_integrate_dcm(U, P, P_hrf, x0, h0)
+% Euler integration for DCM simulation
+%   U - Input
+%   P - DCM Parameters
+%   P_hrf - Hemodynamic parameters
+%   x0 - Initial neural state
+%   h0 - Initial hemodynamic state
+%
+%  OUTPUT
+%    y - BOLD signal
+%    h - hemodynamic trace
+%    x - neural state sequence
     n = size(U.u,2);
 
     region_count = size(x0, 1); 

@@ -1,6 +1,6 @@
 function [pf] = flatten_parameters(P)
-%FLATTEN_PARAMETERS Summary of this function goes here
-%   Detailed explanation goes here
+%FLATTEN_PARAMETERS Takes a DCM parameter structure and collects all values
+%into and array (inverse of STRUCTURE_PARAMETERS)
 
  At = P.A;
  Bt = P.B;

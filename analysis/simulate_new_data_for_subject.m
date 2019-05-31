@@ -1,6 +1,18 @@
 function sim = simulate_new_data_for_subject(subject, model, sigma)
-%SIMULATE_NEW_DATA_FOR_SUBJECT Summary of this function goes here
-%   Detailed explanation goes here
+%SIMULATE_NEW_DATA_FOR_SUBJECT Simulates new data for the subject given the
+%model
+%   subject
+%          .u - input of the subject
+%          .y - original data of the subject
+%   model
+%       .A - Connection matrix
+%       .B - Modulation matrix
+%       .C - Input matrix
+%   sigma - Noise that perturbes the model parameters befor the simulation
+%
+% OUTPUT
+%   sim - identical to subject but sim.y contains newly simulated data
+%   
     sub = load_subject(subject);
     
     U.u = sub.u;
@@ -11,6 +23,7 @@ function sim = simulate_new_data_for_subject(subject, model, sigma)
     
     flat_P = flatten_parameters(P);
     
+    % use the subject id as a seed to ensure reproducible results
     chars = char(subject);
     hash = int32(sum(double(chars).*(10.^(1:length(chars)))));
     
@@ -21,6 +34,7 @@ function sim = simulate_new_data_for_subject(subject, model, sigma)
     % add some noise to the parameteres
     P = structure_parameters((flat_P + sigma * randn(size(flat_P))).*mask, P);
 
+    % Hemodynamics
     P_hrf.kappa = 0.64;
     P_hrf.gamma = 0.32;
     P_hrf.tau = 2;
@@ -34,9 +48,12 @@ function sim = simulate_new_data_for_subject(subject, model, sigma)
     
     [y, ~, ~] = euler_integrate_dcm(U, P, P_hrf, x0, h0);
     
+    % add noise relative to the sample variance
     stdY = mean(std(y, 0, 2));
     y_head = y + stdY * randn(size(y));
 
+    % subsample simulated data to make sure that subject.y and sim.y have
+    % the same resolution
     sim.y = y_head(:,1:U.subsample:end);
     
 end

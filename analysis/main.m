@@ -238,7 +238,10 @@ plot(t, y2);
 shg()
 
 %% All subjects all models
+% run estimation
 
+% sim = 0 -> actual data
+% sim = 1 -> simulated data
 sim = 0;
 few_subjects = 1;
 
@@ -322,6 +325,8 @@ end
 
 %% Load data Fmat
 
+% sim = 0 -> actual data
+% sim = 1 -> simulated data
 sim = 1;
 
 if sim == 1
@@ -445,7 +450,7 @@ shg();
 
 saveas(gcf, "../figures/FamilyRFX" + sim + ".png");
 
-%% PCA
+%% PCA and clustering
 
 
 if sim == 0

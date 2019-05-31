@@ -1,3 +1,23 @@
+% Specify all models used in main.m:
+%
+% Hypotetical Models
+%  - model1
+%  - model2
+%  - model3
+%  - model4
+%  - model5
+%  - model6
+%  - model7
+%  - model8
+%
+%  "True" models
+%  - modelControl
+%  - modelSchizophrenia1
+%  - modelSchizophrenia2
+
+% WARNING: Some labeling comments can be outdated :/
+
+
 b = 0;
 
 %% Model 1

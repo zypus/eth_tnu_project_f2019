@@ -1,5 +1,5 @@
 function dhdt = single_step_hrf(h, u, P, P_hrf)
-
+       % implements the hemodynamic state change equations
     kappa = exp(P.kappa) * P_hrf.kappa;
     tau = exp(P.tau) * P_hrf.tau;
     gamma = exp(P.gamma) * P_hrf.gamma;
